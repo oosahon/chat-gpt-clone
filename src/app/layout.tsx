@@ -3,7 +3,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import { Roboto } from "next/font/google";
 import { ThemeProvider } from "@mui/material/styles";
 import { muiTheme } from "@/theme";
-import { Container } from "@mui/material";
+import { Container, Stack } from "@mui/material";
 import { AppDrawer } from "@/components/AppDrawer";
 import { Body } from "@/components/Body";
 
@@ -29,8 +29,10 @@ export default function RootLayout({
       <Body>
         <AppRouterCacheProvider>
           <ThemeProvider theme={muiTheme}>
-            <AppDrawer isDesktop menuItems={[]} />
-            <Container>{children}</Container>
+            <Stack direction="row">
+              <AppDrawer isDesktop menuItems={[]} />
+              <Container>{children}</Container>
+            </Stack>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </Body>
