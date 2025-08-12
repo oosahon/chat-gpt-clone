@@ -62,7 +62,7 @@ export const AppDrawer = ({
         >
           <div>
             {isDesktop && (
-              <Box pl={2} mt={6}>
+              <Box m={2}>
                 <AcUnitIcon fontSize="large" />
               </Box>
             )}
