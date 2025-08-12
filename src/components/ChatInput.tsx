@@ -3,9 +3,12 @@
 import { palette } from "@/theme";
 import { Add } from "@mui/icons-material";
 import { Box, IconButton, TextField } from "@mui/material";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 export const ChatInput = () => {
+  const t = useTranslations();
+
   const [initialHeight, setInitialHeight] = useState(0);
   const [removeSideButton, setRemoveSideButton] = useState(false);
 
@@ -39,7 +42,7 @@ export const ChatInput = () => {
         onChange={handleChange}
         maxRows={10}
         variant="outlined"
-        placeholder="Go on, ask me anything..."
+        placeholder={t("chatInput.placeholder")}
         slotProps={{
           input: {
             sx: {
